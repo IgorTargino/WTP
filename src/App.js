@@ -1,11 +1,15 @@
 import React from 'react';
+import Routes from './Routes';
+
+import './index.css'
 
 function App() {
   return (
-    <div>
-      <p>OLA</p>
-    </div>
+    <>
+      <Routes />
+    </>
   );
 }
 
 export default App;
+;
