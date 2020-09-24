@@ -1,0 +1,15 @@
+#ceu {
+    width: 100%;
+    height: 20vh;
+
+    background: linear-gradient(180deg, #8C7F51 8.15%, rgba(255, 255, 255, 0) 100%), #00BFFC;
+    transform: rotate(180deg);
+}
+#container{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    top: 0px;
+
+    background: #339966;
+}

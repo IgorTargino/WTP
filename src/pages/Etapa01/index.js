@@ -1,16 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
+
+import dadoInicial from '../../data/dados-iniciais.json'
 
 import './index.css';
 
-class Home extends Component {
+function Etapa01() {
 
-    render(){
-        return(
-            <>
-                <p>Estapa01</p>
-            </>
-        )
+    function mudar(){
+        dadoInicial.etapa02 = "1"
     }
-}
 
-export default Home;
+    return(
+        <>
+            <p>01</p>
+            <p>02</p>
+            <p>03</p>
+            <p onClick={mudar}>04</p>
+        </>
+    )
+
+} 
+
+export default Etapa01;
