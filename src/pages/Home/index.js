@@ -35,17 +35,17 @@ function Home() {
                 {dadoInicial.etapa02 === "1" ? 
                     <Link to="/02"><img src={tanqueReacao} alt="Tanque Reacao"/></Link>
                     : 
-                    <img src={tanqueReacao} alt="lagoa"/>
+                    <img src={tanqueReacao} alt="Tanque Reacao"/>
                 }
                 {dadoInicial.etapa03 === "1"  ? 
                     <Link to="/03"><img src={filtro} alt="Filtro"/></Link>
                     : 
-                    <img src={filtro} alt="lagoa"/>
+                    <img src={filtro} alt="filtro"/>
                 }
                 {dadoInicial.etapa04 === "1"  ? 
                     <Link to="/04"><img src={balao} alt="Balao"/></Link>
                     : 
-                    <img src={balao} alt="lagoa"/>
+                    <img src={balao} alt="balao"/>
                 }
             </div>
             {/*
