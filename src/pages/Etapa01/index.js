@@ -13,14 +13,23 @@ import './index.css';
 
 function Etapa01() {
 
-    function mudar(){
+    function certo(){
         const button = document.getElementsByClassName('myButton')
 
         for (let i = 0; i < button.length; i++) {
            (i == 3 )? button[i].classList.toggle('certa') : button[i].classList.toggle('errada')
         }
-        console.log("[Button]",button);
         dadoInicial.etapa02 = "1"
+    }
+
+    function errado() {
+        const button = document.getElementsByClassName('myButton')
+        console.log("[Button]",button);
+
+        for (let i = 0; i < button.length; i++) {
+           (i == 3 )? button[i].classList.toggle('certa') : button[i].classList.toggle('errada')
+        }
+        alert("Errado!")
     }
 
     return(
@@ -38,16 +47,16 @@ function Etapa01() {
 
             <div id="container">
 
-                <img src={lagoa} alt=""/>
+                <img className="img-lagoa" src={lagoa} alt=""/>
                 
-                <div className="teste">
+                <div className="perguntas">
                     <img src={bacia1} alt=""/>
                     
-                    <div className="container-button">
-                        <p className="myButton">NaOCl</p>
-                        <p className="myButton">NaOH</p>
-                        <p className="myButton">Al2(SO4)3</p>
-                        <p  className="myButton" onClick={mudar}>FeSO4</p>
+                    <div className="container-button grid">
+                        <p className="myButton" onClick={errado}>NaOCl</p>
+                        <p className="myButton" onClick={errado}>NaOH</p>
+                        <p className="myButton" onClick={errado}>Al2(SO4)3</p>
+                        <p  className="myButton" onClick={certo}>FeSO4</p>
                     </div>
                 </div>
             </div>
