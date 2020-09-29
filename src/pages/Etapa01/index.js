@@ -5,7 +5,8 @@ import dadoInicial from '../../data/dados-iniciais.json'
 
 import back from '../../assets/back.png'
 import lagoa from '../../assets/1-Lagoa.png'
-import bacia1 from '../../assets/bacia1.png'
+import bacia_1 from '../../assets/bacia1.png'
+
 
 
 import './index.css';
@@ -50,7 +51,7 @@ function Etapa01() {
                 <img className="img-lagoa" src={lagoa} alt=""/>
                 
                 <div className="perguntas">
-                    <img src={bacia1} alt=""/>
+                    <img src={bacia_1} alt=""/>
                     
                     <div className="container-button grid">
                         <p className="myButton" onClick={errado}>NaOCl</p>
