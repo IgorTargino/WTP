@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import dadoInicial from '../../data/dados-iniciais.json'
 
 import back from '../../assets/back.png'
-import lagoa from '../../assets/Lagoa.png'
+import lagoa from '../../assets/1-Lagoa.png'
 import bacia1 from '../../assets/bacia1.png'
 
 

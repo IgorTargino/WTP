@@ -9,6 +9,21 @@
     width: 100%;
     height: 80vh;
     top: 0px;
+    z-index: 10;
 
     background: #339966;
+}
+.lagoa{
+    margin-left: 10vh;
+}
+.bacia1{
+    position: absolute;
+    top: 25vh;
+    left: 20vh;
+}
+#cano1{
+    position: absolute;
+    top: -7vh;
+    left: 5vh;
+    z-index: -1;
 }
