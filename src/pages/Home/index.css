@@ -14,16 +14,66 @@
     background: #339966;
 }
 .lagoa{
-    margin-left: 10vh;
+    margin-left: 30vh;
 }
 .bacia1{
     position: absolute;
     top: 25vh;
-    left: 20vh;
+    left: 48vh;
 }
+#tanqueReacao{
+    position: absolute;
+    top: 18vh;
+    left: 104vh;
+}
+#bacia2{
+    position: absolute;
+    top: 43vh;
+    left: 35vh;
+}
+.filtro{
+    position: absolute;
+    top: 43vh;
+    left: 105.5vh;
+}
+.balao{    
+    position: absolute;
+    top: 68vh;
+    left: 70vh;
+}
+#caixaAgua{
+    position: absolute;
+    top: -21vh;
+    left: 153.5vh;
+}
+
 #cano1{
     position: absolute;
     top: -7vh;
-    left: 5vh;
+    left: 25vh;
+    z-index: -1;
+}
+#cano2{
+    position: absolute;
+    top: 28.5vh;
+    left: 77vh;
+    z-index: -1;
+}
+#cano3{
+    position: absolute;
+    top: 25vh;
+    left: 25vh;
+    z-index: -1;
+}
+#cano4{
+    z-index: -1;
+    position: absolute;
+    top: 44vh;
+    left: 88vh;
+}
+#cano5{
+    position: absolute;
+    top: -26vh;
+    left: 25vh;
     z-index: -1;
 }
