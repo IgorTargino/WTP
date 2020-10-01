@@ -41,24 +41,25 @@ function Home() {
                         <img className="bacia1" src={bacia1} alt="lagoa"/>
                     }
                     {dadoInicial.etapa02 === "1" ? 
-                        <Link to="/02"><img className="tanqueReacao" src={tanqueReacao} alt="Tanque Reacao"/></Link>
+                        <Link to="/02"><img className="balao2" src={balao2} alt="Balao 2"/></Link>
                         : 
-                        <img className="tanqueReacao" src={tanqueReacao} alt="Tanque Reacao"/>
+                        <img className="balao2" src={balao2} alt="Balao 2"/>
                     }
                     {dadoInicial.etapa03 === "1"  ? 
-                        <div className="filtro" ><Link to="/03"><img src={filtro} alt="Filtro"/></Link></div>
+                        <div className="balao3" ><Link to="/03"><img src={balao2} alt="balao3"/></Link></div>
+                        : 
+                        <div className="balao3" ><img src={balao2} alt="balao3"/></div>
+                    }
+                    {dadoInicial.etapa04 === "1"  ? 
+                        <div className="filtro" ><Link to="/04"><img src={filtro} alt="filtro"/></Link></div>
                         : 
                         <div className="filtro" ><img src={filtro} alt="filtro"/></div>
                     }
-                    {dadoInicial.etapa04 === "1"  ? 
-                        <div className="balao" ><Link to="/04"><img src={balao} alt="Balao"/></Link></div>
-                        : 
-                        <div className="balao" ><img src={balao} alt="balao"/></div>
-                    }
-                    
+                    <img className="tub2" src={tub2} alt="Tubo do balao 2"/>
+                    <img className="tub3" src={tub3} alt="Tubo do balao 3"/>
+                    <img className="tanqueReacao" src={tanqueReacao} alt="tanque de reação"/>
                     <img className="bacia2" src={bacia2} alt=""/>
-                    <img className="caixaAgua" src={caixaAgua} alt=""/>
-
+                    <img className="caixaAgua" src={caixaAgua} alt=""/> 
                     <img className="cano1" src={cano1} alt=""/>
                     <img className="cano2" src={cano2} alt=""/>
                     <img className="cano3" src={cano3} alt=""/>
