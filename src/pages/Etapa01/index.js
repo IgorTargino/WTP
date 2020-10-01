@@ -18,7 +18,7 @@ function Etapa01() {
         const button = document.getElementsByClassName('myButton')
 
         for (let i = 0; i < button.length; i++) {
-           (i == 3 )? button[i].classList.toggle('certa') : button[i].classList.toggle('errada')
+           (i === 3 )? button[i].classList.toggle('certa') : button[i].classList.toggle('errada')
         }
         dadoInicial.etapa02 = "1"
     }
@@ -28,7 +28,7 @@ function Etapa01() {
         console.log("[Button]",button);
 
         for (let i = 0; i < button.length; i++) {
-           (i == 3 )? button[i].classList.toggle('certa') : button[i].classList.toggle('errada')
+           (i === 3 )? button[i].classList.toggle('certa') : button[i].classList.toggle('errada')
         }
         alert("Errado!")
     }

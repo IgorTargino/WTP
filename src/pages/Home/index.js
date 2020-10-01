@@ -40,14 +40,14 @@ function Home() {
                         <img id="tanqueReacao" src={tanqueReacao} alt="Tanque Reacao"/>
                     }
                     {dadoInicial.etapa03 === "1"  ? 
-                        <Link to="/03"><img className="filtro" src={filtro} alt="Filtro"/></Link>
+                        <div className="filtro" ><Link to="/03"><img src={filtro} alt="Filtro"/></Link></div>
                         : 
-                        <img className="filtro" src={filtro} alt="filtro"/>
+                        <div className="filtro" ><img src={filtro} alt="filtro"/></div>
                     }
                     {dadoInicial.etapa04 === "1"  ? 
                         <div className="balao" ><Link to="/04"><img src={balao} alt="Balao"/></Link></div>
                         : 
-                        <img className="balao" src={balao} alt="balao"/>
+                        <div className="balao" ><img src={balao} alt="balao"/></div>
                     }
                     
                     <img id="bacia2" src={bacia2} alt=""/>

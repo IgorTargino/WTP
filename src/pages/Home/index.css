@@ -16,11 +16,13 @@
 .game-container{
     position: relative;
     width: 80%;
+    max-width: 1092.8px;
     height: 100%;
     margin: 0 auto;
     z-index: 1;
 }
 .lagoa{
+    width: 50%;
     left: 8%;
     position: absolute;
 }
@@ -35,6 +37,7 @@
     top: 23%;
     left: 54.1%;
     width: 26%;
+    z-index: 3;
 }
 #bacia2{
     position: absolute;
@@ -48,6 +51,7 @@
     /* top: 53%; */
     left: 54.5%;
     width: 8.8%;
+    z-index: 2;
 }
 .balao{    
     position: absolute;
@@ -55,6 +59,7 @@
     /* top: 85%;*/
     left: 40%;
     width: 38%;
+    z-index: 1;
 }
 #caixaAgua{
     position: absolute;
