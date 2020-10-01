@@ -16,8 +16,9 @@
 .game-container{
     position: relative;
     width: 80%;
-    max-width: 1092.8px;
     height: 100%;
+    max-width: 1092.8px;
+    max-height: 525px;
     margin: 0 auto;
     z-index: 1;
 }
