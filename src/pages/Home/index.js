@@ -26,37 +26,39 @@ function Home() {
 
             <div id="ceu"></div>
             <div id="container">
-                <img className="lagoa" src={lagoa} alt="lagoa"/>
+                <div className="game-container">
+                    <img className="lagoa" src={lagoa} alt="lagoa"/>
 
-                {dadoInicial.etapa01 === "1" ? 
-                    <Link  to="/01"><img className="bacia1" src={bacia1} alt="Bacia"/></Link>
-                    : 
-                    <img className="bacia1" src={bacia1} alt="lagoa"/>
-                }
-                {dadoInicial.etapa02 === "1" ? 
-                    <Link to="/02"><img id="tanqueReacao" src={tanqueReacao} alt="Tanque Reacao"/></Link>
-                    : 
-                    <img id="tanqueReacao" src={tanqueReacao} alt="Tanque Reacao"/>
-                }
-                {dadoInicial.etapa03 === "1"  ? 
-                    <Link to="/03"><img className="filtro" src={filtro} alt="Filtro"/></Link>
-                    : 
-                    <img className="filtro" src={filtro} alt="filtro"/>
-                }
-                {dadoInicial.etapa04 === "1"  ? 
-                    <Link to="/04"><img className="balao" src={balao} alt="Balao"/></Link>
-                    : 
-                    <img className="balao" src={balao} alt="balao"/>
-                }
-                
-                <img id="bacia2" src={bacia2} alt=""/>
-                <img id="caixaAgua" src={caixaAgua} alt=""/>
+                    {dadoInicial.etapa01 === "1" ? 
+                        <Link  to="/01"><img className="bacia1" src={bacia1} alt="Bacia"/></Link>
+                        : 
+                        <img className="bacia1" src={bacia1} alt="lagoa"/>
+                    }
+                    {dadoInicial.etapa02 === "1" ? 
+                        <Link to="/02"><img id="tanqueReacao" src={tanqueReacao} alt="Tanque Reacao"/></Link>
+                        : 
+                        <img id="tanqueReacao" src={tanqueReacao} alt="Tanque Reacao"/>
+                    }
+                    {dadoInicial.etapa03 === "1"  ? 
+                        <Link to="/03"><img className="filtro" src={filtro} alt="Filtro"/></Link>
+                        : 
+                        <img className="filtro" src={filtro} alt="filtro"/>
+                    }
+                    {dadoInicial.etapa04 === "1"  ? 
+                        <div className="balao" ><Link to="/04"><img src={balao} alt="Balao"/></Link></div>
+                        : 
+                        <img className="balao" src={balao} alt="balao"/>
+                    }
+                    
+                    <img id="bacia2" src={bacia2} alt=""/>
+                    <img id="caixaAgua" src={caixaAgua} alt=""/>
 
-                <img id="cano1" src={cano1} alt=""/>
-                <img id="cano2" src={cano2} alt=""/>
-                <img id="cano3" src={cano3} alt=""/>
-                <img id="cano4" src={cano2} alt=""/>
-                <img id="cano5" src={cano5} alt=""/>
+                    <img id="cano1" src={cano1} alt=""/>
+                    <img id="cano2" src={cano2} alt=""/>
+                    <img id="cano3" src={cano3} alt=""/>
+                    <img id="cano4" src={cano2} alt=""/>
+                    <img id="cano5" src={cano5} alt=""/>
+                </div>
             </div>
         </>
     )

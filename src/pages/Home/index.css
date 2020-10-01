@@ -13,67 +13,87 @@
 
     background: #339966;
 }
+.game-container{
+    position: relative;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    z-index: 1;
+}
 .lagoa{
-    margin-left: 30vh;
+    left: 8%;
+    position: absolute;
 }
 .bacia1{
     position: absolute;
-    top: 25vh;
-    left: 48vh;
+    top: 32%;
+    left: 21%;
+    width: 18%;
 }
 #tanqueReacao{
     position: absolute;
-    top: 18vh;
-    left: 104vh;
+    top: 23%;
+    left: 54.1%;
+    width: 26%;
 }
 #bacia2{
     position: absolute;
-    top: 43vh;
-    left: 35vh;
+    top: 53%;
+    left: 12%;
+    width: 36%;
 }
 .filtro{
     position: absolute;
-    top: 43vh;
-    left: 105.5vh;
+    padding-top: 25.6%;
+    /* top: 53%; */
+    left: 54.5%;
+    width: 8.8%;
 }
 .balao{    
     position: absolute;
-    top: 68vh;
-    left: 70vh;
+    padding-top: 40.6%;
+    /* top: 85%;*/
+    left: 40%;
+    width: 38%;
 }
 #caixaAgua{
     position: absolute;
-    top: -21vh;
-    left: 153.5vh;
+    top: -26.3%;
+    left: 83.2%;
+    width: 18%;
 }
 
 #cano1{
     position: absolute;
-    top: -7vh;
-    left: 25vh;
+    top: -8%;
+    left: 6.1%;
     z-index: -1;
+    width: 16%;
 }
 #cano2{
     position: absolute;
-    top: 28.5vh;
-    left: 77vh;
+    top: 36.2%;
+    left: 38%;
     z-index: -1;
 }
 #cano3{
     position: absolute;
-    top: 25vh;
-    left: 25vh;
+    top: 32%;
+    left: 6.1%;
     z-index: -1;
+    width: 78%;
 }
 #cano4{
     z-index: -1;
     position: absolute;
-    top: 44vh;
-    left: 88vh;
+    top: 55%;
+    left: 40%;
+    width: 21%;
 }
 #cano5{
     position: absolute;
-    top: -26vh;
-    left: 25vh;
+    top: -33%;
+    left: 6%;
+    width: 87%;
     z-index: -1;
 }
