@@ -1,5 +1,5 @@
 .pergunta{
-    font-family: Ropa Sans;
+    font-family: OCR A Std;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -9,6 +9,7 @@
     padding: 25px 10px;
     margin: 0 10px;
 
+    
     color: #000000;
 }
 .home-back{
@@ -68,6 +69,9 @@
 .perguntas{
 	display: grid;
     grid-template-columns: 1fr 1fr;
+    position: absolute;
+    top: 26%;
+    left: 53%;
 }
 .grid {
 	display: grid;
@@ -75,10 +79,4 @@
     margin: 0 auto;
     height: 20px;
     margin-left: 40px;
-}
-.img-lagoa{
-    width: 40%;
-    min-width: 450px;
-    margin-bottom: 40px;
-    margin-left: 110px;
 }

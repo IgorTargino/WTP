@@ -14,9 +14,15 @@ import cano1 from '../../assets/1-tub v.png'
 import cano2 from '../../assets/2-tub v.png'
 import cano3 from '../../assets/3-tub v.png'
 import cano5 from '../../assets/5-tub v.png'
+import tub2 from '../../assets/tub-balao-2.png'
+import tub3 from '../../assets/tub-balao-3.png'
+import balao2 from'../../assets/balao2.png'
+
+
 
 
 import './index.css';
+import { unstable_batchedUpdates } from 'react-dom';
 
 function Home() {
 
@@ -24,8 +30,8 @@ function Home() {
         <>
             {console.log(dadoInicial)}
 
-            <div id="ceu"></div>
-            <div id="container">
+            <div className="ceu"></div>
+            <div className="container">
                 <div className="game-container">
                     <img className="lagoa" src={lagoa} alt="lagoa"/>
 
@@ -35,9 +41,9 @@ function Home() {
                         <img className="bacia1" src={bacia1} alt="lagoa"/>
                     }
                     {dadoInicial.etapa02 === "1" ? 
-                        <Link to="/02"><img id="tanqueReacao" src={tanqueReacao} alt="Tanque Reacao"/></Link>
+                        <Link to="/02"><img className="tanqueReacao" src={tanqueReacao} alt="Tanque Reacao"/></Link>
                         : 
-                        <img id="tanqueReacao" src={tanqueReacao} alt="Tanque Reacao"/>
+                        <img className="tanqueReacao" src={tanqueReacao} alt="Tanque Reacao"/>
                     }
                     {dadoInicial.etapa03 === "1"  ? 
                         <div className="filtro" ><Link to="/03"><img src={filtro} alt="Filtro"/></Link></div>
@@ -50,14 +56,14 @@ function Home() {
                         <div className="balao" ><img src={balao} alt="balao"/></div>
                     }
                     
-                    <img id="bacia2" src={bacia2} alt=""/>
-                    <img id="caixaAgua" src={caixaAgua} alt=""/>
+                    <img className="bacia2" src={bacia2} alt=""/>
+                    <img className="caixaAgua" src={caixaAgua} alt=""/>
 
-                    <img id="cano1" src={cano1} alt=""/>
-                    <img id="cano2" src={cano2} alt=""/>
-                    <img id="cano3" src={cano3} alt=""/>
-                    <img id="cano4" src={cano2} alt=""/>
-                    <img id="cano5" src={cano5} alt=""/>
+                    <img className="cano1" src={cano1} alt=""/>
+                    <img className="cano2" src={cano2} alt=""/>
+                    <img className="cano3" src={cano3} alt=""/>
+                    <img className="cano4" src={cano2} alt=""/>
+                    <img className="cano5" src={cano5} alt=""/>
                 </div>
             </div>
         </>
