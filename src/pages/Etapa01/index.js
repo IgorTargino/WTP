@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 
 import dadoInicial from '../../data/dados-iniciais.json'
 
@@ -8,12 +7,13 @@ import Pergunta from '../../components/pergunta'
 import {
     bacia1Inicial,
     cano1Inicial,
+    filtroInicial,
+    tanqueReacaoInicial
 } from '../../import/imgInicial'
 
 import './etapa01.css';
 
-function Etapa01() {
-
+function Etapa01(response) {
     function certo() {
         const button = document.getElementsByClassName('myButton')
 
@@ -21,6 +21,7 @@ function Etapa01() {
             (i === 3) ? button[i].classList.toggle('certa') : button[i].classList.toggle('errada')
         }
         dadoInicial.etapa02 = "1"
+        localStorage.clear()
     }
 
     function errado() {
@@ -32,48 +33,87 @@ function Etapa01() {
         }
         alert("Errado!")
     }
+    
+    function perguntaCera(){
+        const etapa = localStorage.getItem('etapa');
+
+        if(etapa === "01"){
+            return(
+                <Pergunta
+                    titulo={"Etapa 01"}
+                    pergunta={"Necessitamos diminuir os índices de ferro e manganês dissolvidos, matéria orgânica, bactéria, vírus e protozoários. Qual substância química podemos usar para oxída-los ?"}
+                    item01={bacia1Inicial}
+                    classItem01={"bacia1"}
+                    item02={cano1Inicial}
+                    classItem02={"cano1"}
+                    respostas={{pri: "NaOCl",
+                                seg: "NaOH",
+                                ter: "Al2(SO4)3",
+                                qua: "FeSO4" 
+                            }}
+                    certo={certo}
+                    errado={errado}
+                />
+            );
+        }
+
+        if(etapa === "02"){
+            return(
+                <Pergunta
+                    titulo={"Etapa 02"}
+                    pergunta={"Nos ajude a reduzir a turbidez da água proveniente dos coloides presentes. Use um desses produtos para realizar o processo de coagulação. "}
+                    item01={tanqueReacaoInicial}
+                    classItem01={"tanqueReacaoEtapa"}
+                    respostas={{pri: "NaOCl",
+                                seg: "NaOH",
+                                ter: "Al2(SO4)3",
+                                qua: "FeSO4" 
+                            }}
+                    certo={certo}
+                />
+            );
+        }
+
+        if(etapa === "03"){
+            return(
+                <Pergunta
+                    titulo={"Etapa 03"}
+                    pergunta={"Os coloides neutralizados formados ainda não possuem peso suficiente para sedimentarem, o que podemos adicionar para aumentar os flocos já formados? "}
+                    item01={filtroInicial}
+                    classItem01={"filtroEtapa"}
+                    respostas={{pri: "NaOCl",
+                                seg: "NaOH",
+                                ter: "Al2(SO4)3",
+                                qua: "FeSO4" 
+                            }}
+                    certo={certo}
+                />
+            );
+        }
+
+        if(etapa === "04"){
+            return(
+                <Pergunta
+                    titulo={"Etapa 04"}
+                    pergunta={"Os coloides neutralizados formados ainda não possuem peso suficiente para sedimentarem, o que podemos adicionar para aumentar os flocos já formados? "}
+                    item01={filtroInicial}
+                    classItem01={"filtroEtapa"}
+                    respostas={{pri: "NaOCl",
+                                seg: "NaOH",
+                                ter: "Al2(SO4)3",
+                                qua: "FeSO4" 
+                            }}
+                    certo={certo}
+                />
+            );
+        }
+    }
 
     return (
         <>
-
-            <Pergunta
-                titulo={"Etapa 01"}
-                pergunta={"Necessitamos diminuir os índices de ferro e manganês dissolvidos, matéria orgânica, bactéria, vírus e protozoários. Qual substância química podemos usar para oxída-los ?"}
-                item01={bacia1Inicial}
-                item02={cano1Inicial}
-                respostas={{pri: "NaOCl",
-                            seg: "NaOH",
-                            ter: "Al2(SO4)3",
-                            qua: "FeSO4" 
-                        }}
-                certo={certo}
-                errado={errado}
-            />
-            {/*<div className="ceu">
-                <Link to="/"><img className="home-back" src={back} alt="" /></Link>
-                <div className="pergunta">
-                    <p>Etapa 1º:<br /></p>
-                    <p>
-                        Necessitamos diminuir os índices de ferro e manganês dissolvidos, matéria orgânica, bactéria,
-                        vírus e protozoários. Qual substância química podemos usar para oxída-los ?
-                    </p>
-                </div>
-            </div>
-            <div className="container">
-                <div className="game-container">
-                    <img className="lagoa" src={lagoa} alt="" />
-                    <img className="bacia1" src={bacia1Inicial} alt="" />
-                    <img className="cano1" src={cano1Inicial} alt=""/>
-                    <div className="perguntas">
-                        <div className="container-button grid">
-                            <p className="myButton" onClick={errado}>NaOCl</p>
-                            <p className="myButton" onClick={errado}>NaOH</p>
-                            <p className="myButton" onClick={errado}>Al2(SO4)3</p>
-                            <p className="myButton" onClick={certo}>FeSO4</p>
-                        </div>
-                    </div>
-                </div>
-            </div>*/}
+            {
+                perguntaCera()
+            }
         </>
     )
 

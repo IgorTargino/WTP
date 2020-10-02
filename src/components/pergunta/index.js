@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom';
 
 import {  back, lagoa  } from '../../import/imgInicial';
 
-function Pergunta({ item01, item02 , titulo, pergunta, respostas, certo, errado }) {
-    
-    
+function Pergunta({ item01, classItem01, item02, classItem02, titulo, pergunta, respostas, certo, errado }) {
+
     return(
         <>
             <div className="ceu">
@@ -21,8 +20,10 @@ function Pergunta({ item01, item02 , titulo, pergunta, respostas, certo, errado 
             <div className="container">
                 <div className="game-container">
                     <img className="lagoa" src={lagoa} alt="" />
-                    <img className="bacia1" src={item01} alt="" />
-                    <img className="cano1" src={item02} alt=""/>
+                    <img className={classItem01} src={item01} alt="" />
+                    {item02 ? <img className={classItem02} src={item02} alt=""/> : 
+                                <></>
+                    }                    
                     <div className="perguntas">
                         <div className="container-button grid">
                             <p className="myButton" onClick={errado} >{respostas.pri}</p>

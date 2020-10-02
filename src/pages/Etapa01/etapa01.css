@@ -80,3 +80,13 @@
     height: 20px;
     margin-left: 40px;
 }
+.tanqueReacaoEtapa{
+    position: absolute;
+    top: 28%;
+    left: 15%;
+}
+.filtroEtapa{
+    position: absolute;
+    top: 30%;
+    left: 27%;
+}
