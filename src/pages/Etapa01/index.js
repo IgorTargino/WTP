@@ -3,15 +3,14 @@ import { Link } from 'react-router-dom'
 
 import dadoInicial from '../../data/dados-iniciais.json'
 
-import back from '../../assets/back.png'
-import lagoa from '../../assets/1-Lagoa.png'
-import bacia1 from '../../assets/bacia1.png'
-import cano1 from '../../assets/1-tub v.png'
+import {
+    lagoa,
+    back,
+    bacia1Inicial,
+    cano1Inicial,
+} from '../../import/imgInicial'
 
-
-
-import './index.css';
-
+import './etapa01.css';
 
 function Etapa01() {
 
@@ -49,8 +48,8 @@ function Etapa01() {
             <div className="container">
                 <div className="game-container">
                     <img className="lagoa" src={lagoa} alt="" />
-                    <img className="bacia1" src={bacia1} alt="" />
-                    <img className="cano1" src={cano1} alt=""/>
+                    <img className="bacia1" src={bacia1Inicial} alt="" />
+                    <img className="cano1" src={cano1Inicial} alt=""/>
                     <div className="perguntas">
                         <div className="container-button grid">
                             <p className="myButton" onClick={errado}>NaOCl</p>
