@@ -29,7 +29,7 @@ function Home() {
 
     return(
         <>
-            {console.log(dadoInicial)}
+            {console.log("[Dados inicaias]",dadoInicial.etapa04)}
 
             <div className="ceu"></div>
             <div className="container">
@@ -55,7 +55,7 @@ function Home() {
                         etapa={"03"}
                     />
                     <AcaoClick
-                        dadoInicial={dadoInicial.etapa4}
+                        dadoInicial={dadoInicial.etapa04}
                         className={"filtro"}
                         src={filtroInicial}
                         etapa={"04"}

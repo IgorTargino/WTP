@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 
 import {  back, lagoa  } from '../../import/imgInicial';
 
-function Pergunta({ item01, classItem01, item02, classItem02, titulo, pergunta, respostas, certo, errado }) {
-
+function Pergunta({ etapa, item01, classItem01, item02, classItem02, titulo, pergunta, respostas, certo, errado }) {
     return(
         <>
             <div className="ceu">
@@ -29,7 +28,7 @@ function Pergunta({ item01, classItem01, item02, classItem02, titulo, pergunta, 
                             <p className="myButton" onClick={errado} >{respostas.pri}</p>
                             <p className="myButton" onClick={errado} >{respostas.seg}</p>
                             <p className="myButton" onClick={errado} >{respostas.ter}</p>
-                            <p className="myButton" onClick={certo}  >{respostas.qua}</p>
+                            <p className="myButton" onClick={() => certo(etapa)}  >{respostas.qua}</p>
                         </div>
                     </div>
                 </div>
