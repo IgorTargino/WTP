@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 
 import dadoInicial from '../../data/dados-iniciais.json'
 
@@ -35,8 +34,6 @@ function Home() {
             <div className="ceu"></div>
             <div className="container">
                 <div className="game-container">
-
-                    {console.log(["Link"],balao1)}
 
                     <AcaoClick
                         dadoInicial={dadoInicial.etapa01}

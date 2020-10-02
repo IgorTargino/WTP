@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 import dadoInicial from '../../data/dados-iniciais.json'
 
+import Pergunta from '../../components/pergunta'
+
 import {
-    lagoa,
-    back,
     bacia1Inicial,
     cano1Inicial,
 } from '../../import/imgInicial'
@@ -25,7 +25,7 @@ function Etapa01() {
 
     function errado() {
         const button = document.getElementsByClassName('myButton')
-        console.log("[Button]", button);
+        //console.log("[Button]", button);
 
         for (let i = 0; i < button.length; i++) {
             (i === 3) ? button[i].classList.toggle('certa') : button[i].classList.toggle('errada')
@@ -35,7 +35,21 @@ function Etapa01() {
 
     return (
         <>
-            <div className="ceu">
+
+            <Pergunta
+                titulo={"Etapa 01"}
+                pergunta={"Necessitamos diminuir os índices de ferro e manganês dissolvidos, matéria orgânica, bactéria, vírus e protozoários. Qual substância química podemos usar para oxída-los ?"}
+                item01={bacia1Inicial}
+                item02={cano1Inicial}
+                respostas={{pri: "NaOCl",
+                            seg: "NaOH",
+                            ter: "Al2(SO4)3",
+                            qua: "FeSO4" 
+                        }}
+                certo={certo}
+                errado={errado}
+            />
+            {/*<div className="ceu">
                 <Link to="/"><img className="home-back" src={back} alt="" /></Link>
                 <div className="pergunta">
                     <p>Etapa 1º:<br /></p>
@@ -59,7 +73,7 @@ function Etapa01() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>*/}
         </>
     )
 
