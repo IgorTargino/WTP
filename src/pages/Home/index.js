@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import dadoInicial from '../../data/dados-iniciais.json'
 
@@ -27,21 +27,30 @@ import './home.css';
 
 function Home() {
 
+    useEffect(() => {
+        let ativo = document.querySelectorAll('.ativo');
+        let listaDeAtivo = Array.from(ativo);
+
+        if( ativo.length >= 2){
+            for (let i = 0; i < (listaDeAtivo.length - 1); i++) {
+                listaDeAtivo[i].classList.toggle("ativo");      
+            }
+        }
+    },[]);
+    
     return(
         <>
-            {console.log("[Dados inicaias]",dadoInicial.etapa04)}
-
             <div className="ceu"></div>
             <div className="container">
                 <div className="game-container">
 
                     <AcaoClick
+                        dados={dadoInicial}
                         dadoInicial={dadoInicial.etapa01}
                         className={"balao1"}
                         src={balao1}
                         etapa={"01"}
                     />
-
                     <AcaoClick
                         dadoInicial={dadoInicial.etapa02}
                         className={"balao2"}
