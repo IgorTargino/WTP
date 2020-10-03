@@ -15,9 +15,6 @@ import './etapa01.css';
 
 function Etapa01(response) {
     function certo(etapa) {
-
-        console.log(etapa);
-
         const button = document.getElementsByClassName('myButton')
 
         for (let i = 0; i < button.length; i++) {

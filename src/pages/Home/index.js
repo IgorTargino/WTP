@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState ,useEffect } from 'react';
 
 import dadoInicial from '../../data/dados-iniciais.json'
 
@@ -22,21 +22,65 @@ import {
     balao2
 } from '../../import/imgInicial.js'
 
+import {
+    cano1Final,
+    cano2Final,
+    cano3Final,
+    cano5Final
+} from '../../import/imgFinal.js'
+
 import './home.css';
 
 
 function Home() {
+    const [canos, setCano] = useState({
+        cano1: cano1Inicial,
+        cano2: cano2Inicial,
+        cano3: cano3Inicial,
+        cano4: cano2Inicial,
+        cano5: cano5Inicial,
+    });
 
     useEffect(() => {
         let ativo = document.querySelectorAll('.ativo');
         let listaDeAtivo = Array.from(ativo);
-
-        if( ativo.length >= 2){
-            for (let i = 0; i < (listaDeAtivo.length - 1); i++) {
+        if( ativo.length){
+            const eMaior = (dadoInicial.etapa05 === "1");
+            for (let i = 0; i < (listaDeAtivo.length - (eMaior ? 0 : 1)); i++) {
                 listaDeAtivo[i].classList.toggle("ativo");      
             }
         }
     },[]);
+
+    useEffect(() => {
+        if (dadoInicial.etapa02 === "1") {
+            setCano({
+                ...canos,
+                cano1: cano1Final,
+                cano2: cano2Final
+            });
+        
+        }
+        if (dadoInicial.etapa04 === "1") {
+            setCano({
+                ...canos,
+                cano1: cano1Final,
+                cano2: cano2Final,
+                cano3: cano3Final,
+                cano4: cano2Final
+            });
+        }
+        if (dadoInicial.etapa05 === "1") {
+            setCano({
+                ...canos,
+                cano1: cano1Final,
+                cano2: cano2Final,
+                cano3: cano3Final,
+                cano4: cano2Final,
+                cano5: cano5Final
+            });
+        }
+        },[])
     
     return(
         <>
@@ -69,13 +113,8 @@ function Home() {
                         src={filtroInicial}
                         etapa={"04"}
                     />
-                    <AcaoClick
-                        dadoInicial={dadoInicial.etapa05}
-                        className={"balao"}
-                        src={balao}
-                        etapa={"05"}
-                    />
 
+                    <img className="balao" src={balao} alt="balao"/>
                     <img className="lagoa" src={lagoa} alt="lagoa"/>
                     <img className="caixaAgua" src={caixaAgua} alt=""/> 
                     <img className="tub2" src={tub2} alt="Tubo do balao 2"/>
@@ -83,11 +122,11 @@ function Home() {
                     <img className="bacia1" src={bacia1Inicial} alt="bacia"/>
                     <img className="bacia2" src={bacia2Inicial} alt="bacia2"/>
                     <img className="tanqueReacao" src={tanqueReacaoInicial} alt="tanque de reação"/>
-                    <img className="cano1" src={cano1Inicial} alt=""/>
-                    <img className="cano2" src={cano2Inicial} alt=""/>
-                    <img className="cano3" src={cano3Inicial} alt=""/>
-                    <img className="cano4" src={cano2Inicial} alt=""/>
-                    <img className="cano5" src={cano5Inicial} alt=""/>
+                    <img className="cano1" src={canos.cano1} alt=""/>
+                    <img className="cano2" src={canos.cano2} alt=""/>
+                    <img className="cano3" src={canos.cano3} alt=""/>
+                    <img className="cano4" src={canos.cano4} alt=""/>
+                    <img className="cano5" src={canos.cano5} alt=""/>
                 </div>
             </div>
         </>
