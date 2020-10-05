@@ -1,8 +1,9 @@
 import React, { useState ,useEffect } from 'react';
 
-import dadoInicial from '../../data/dados-iniciais.json'
+import dadoInicial from '../../data/dados-iniciais.json';
 
-import AcaoClick from '../../components/acaoclick'
+import AcaoClick from '../../components/acaoclick';
+import InicioFim from '../../components/inicio-fim';
 
 import {
     lagoa,
@@ -81,9 +82,28 @@ function Home() {
             });
         }
         },[])
-    
+
+    function inicioFim() {
+        if(dadoInicial.comeca === "1"){
+            {dadoInicial.comeca= "0"}
+            return(
+                <InicioFim/> 
+            );
+        }else if(dadoInicial.comeca === "2" ){
+            {dadoInicial.comeca= "0"}
+            return(
+                <InicioFim/> 
+            );
+        }else{
+            return null
+        }
+    }
+
     return(
         <>
+            {
+                inicioFim()
+            }
             <div className="ceu"></div>
             <div className="container">
                 <div className="game-container">
