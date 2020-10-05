@@ -3,7 +3,7 @@ import React, { useState ,useEffect } from 'react';
 import dadoInicial from '../../data/dados-iniciais.json';
 
 import AcaoClick from '../../components/acaoclick';
-import InicioFim from '../../components/inicio-fim';
+import Inicio from '../../components/inicio-fim';
 
 import {
     lagoa,
@@ -80,29 +80,33 @@ function Home() {
                 cano4: cano2Final,
                 cano5: cano5Final
             });
+            dadoInicial.comeca = "3"
         }
         },[])
 
-    function inicioFim() {
-        if(dadoInicial.comeca === "1"){
+    function inicio() {
+        if((dadoInicial.comeca === "1") && (dadoInicial.etapa02 === "0") ){
             {dadoInicial.comeca= "0"}
             return(
-                <InicioFim/> 
+                <Inicio
+                    status="comeco"
+                /> 
             );
-        }else if(dadoInicial.comeca === "2" ){
-            {dadoInicial.comeca= "0"}
+        }else if(dadoInicial.comeca === "3" ){
             return(
-                <InicioFim/> 
+                <Inicio
+                    status="fim"
+                />
             );
         }else{
-            return null
+            return null;
         }
     }
 
     return(
         <>
             {
-                inicioFim()
+                inicio()
             }
             <div className="ceu"></div>
             <div className="container">
