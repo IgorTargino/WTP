@@ -67,3 +67,52 @@
         line-height: 61px;
 
 }
+@media (max-width: 750px) and ( min-width: 555px)
+{
+  
+    .inicioFimMsg p{
+        font-size: 20px;
+        line-height: 28px;
+        font-family: Old Standard TT;
+        padding: 0px 28px;
+    }
+    .inicioFimButton span{
+    
+        font-family: Pacifico;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 30px;
+    }
+}
+
+@media ( max-width: 554px)
+{
+    .inicioFimMsg{
+        width: 88%;
+    }
+    .inicioFimMsg h1{
+        font-size: 50px;
+    }
+    .inicioFimMsg p{
+        background-color: royalblue;
+        font-size: 25px;
+        line-height: 28px;
+        padding: 0px 15px;
+    }
+    .inicioFimButton span{   
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    .inicioFimButton{
+        width: 50%;
+        height: 16.4%;
+        /* Gray 2 */
+    
+        border: 3px solid #4F4F4F;
+        box-sizing: border-box;
+        border-radius: 8px;
+        transition: 0.3s ease-in;
+    }
+}

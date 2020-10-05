@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 import {  back, lagoa  } from '../../import/imgInicial';
 
+import './pergunta.css';
+
 function Pergunta({ etapa, item01, classItem01, item02, classItem02, titulo, pergunta, respostas, certo, errado }) {
     return(
         <>
