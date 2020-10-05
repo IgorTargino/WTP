@@ -89,8 +89,7 @@
 .filtroEtapa{
     position: absolute;
     top: 30%;
-    left: 5%;
-    width: 24%;
+    left: 27%; 
 }
 @media (max-width: 831px){
     .myButton {
@@ -104,18 +103,11 @@
         font-size: 15px;
     }
 }
-@media (max-width: 650px){
-    .ceu{
-        height: 25vh;
-    }
-    .container{
-        height:75vh;
-    }
+@media (max-width: 640px){
     .myButton {
         font-size: 12px;
     }
     .pergunta{
-        background-color: red;
         padding: 0 30px;
         font-size: 12px;
     }
