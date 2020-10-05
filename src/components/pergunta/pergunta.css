@@ -89,14 +89,13 @@
 .filtroEtapa{
     position: absolute;
     top: 30%;
-    left: 27%; 
+    left: 5%; 
 }
 @media (max-width: 831px){
     .myButton {
         font-size: 13px;
     }
     .pergunta{
-        background-color: royalblue;
         padding: 0 20px;
     }
     .pergunta{

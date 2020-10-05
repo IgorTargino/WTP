@@ -59,17 +59,24 @@
     background: #57b2c7;
 }
 .inicioFimButton span{
-    
-        font-family: Pacifico;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 35px;
-        line-height: 61px;
+
+    font-family: Pacifico;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 61px;
 
 }
-@media (max-width: 750px) and ( min-width: 555px)
+@media (max-width: 750px) and ( min-width: 501px)
 {
   
+    .inicioFimMsg{
+        width: 88%;
+        height: 80%;
+    }
+    .inicioFimMsg h1{
+        font-size: 40px;
+    }
     .inicioFimMsg p{
         font-size: 20px;
         line-height: 28px;
@@ -81,38 +88,37 @@
         font-family: Pacifico;
         font-style: normal;
         font-weight: normal;
-        font-size: 25px;
+        font-size: 20px;
         line-height: 30px;
     }
 }
-
-@media ( max-width: 554px)
+@media ( max-width: 500px)
 {
+      
     .inicioFimMsg{
         width: 88%;
+        height: 80%;
     }
     .inicioFimMsg h1{
-        font-size: 50px;
+        font-size: 30px;
     }
     .inicioFimMsg p{
-        background-color: royalblue;
-        font-size: 25px;
-        line-height: 28px;
-        padding: 0px 15px;
+        font-size: 15px;
+        line-height: 18px;
+        font-family: Old Standard TT;
+        padding: 0px 28px;
     }
-    .inicioFimButton span{   
-        font-size: 25px;
+    .inicioFimButton span{
+    
+        font-family: Pacifico;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
         line-height: 30px;
     }
-
     .inicioFimButton{
-        width: 50%;
-        height: 16.4%;
-        /* Gray 2 */
-    
-        border: 3px solid #4F4F4F;
-        box-sizing: border-box;
-        border-radius: 8px;
-        transition: 0.3s ease-in;
+        width: 40%;
+        height: 22%;
+        margin-bottom: 10px;
     }
 }
