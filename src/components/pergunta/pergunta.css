@@ -97,9 +97,10 @@
     }
     .pergunta{
         padding: 0 20px;
-    }
-    .pergunta{
         font-size: 15px;
+    }
+    .perguntas{
+        left: 37%;
     }
 }
 @media (max-width: 640px){

@@ -15,6 +15,7 @@ import tub2 from '../assets/tub-balao-2.png'
 import tub3 from '../assets/tub-balao-3.png'
 import back from '../assets/back.png'
 
+
 export {
     lagoa,
     filtroInicial,

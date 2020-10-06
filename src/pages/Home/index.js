@@ -24,6 +24,10 @@ import {
 } from '../../import/imgInicial.js'
 
 import {
+    filtroFinal,
+    tanqueReacaoFinal,
+    bacia1Final,
+    bacia2Final,
     cano1Final,
     cano2Final,
     cano3Final,
@@ -41,6 +45,9 @@ function Home() {
         cano4: cano2Inicial,
         cano5: cano5Inicial,
     });
+    const [bacia1, setBacia1] = useState(bacia1Inicial)
+    const [bacia2, setBacia2] = useState(bacia2Inicial)
+    const [tanqueDeReacao, setTanqueDeReacao] = useState(tanqueReacaoInicial)
 
     useEffect(() => {
         let ativo = document.querySelectorAll('.ativo');
@@ -58,8 +65,9 @@ function Home() {
             setCano({
                 ...canos,
                 cano1: cano1Final,
-                cano2: cano2Final
+                cano2: cano2Final,
             });
+            setBacia1(bacia1Final);
         
         }
         if (dadoInicial.etapa04 === "1") {
@@ -68,8 +76,11 @@ function Home() {
                 cano1: cano1Final,
                 cano2: cano2Final,
                 cano3: cano3Final,
-                cano4: cano2Final
+                cano4: cano2Final,
             });
+            setBacia1(bacia1Final);
+            setBacia2(bacia2Final);
+            setTanqueDeReacao(tanqueReacaoFinal);
         }
         if (dadoInicial.etapa05 === "1") {
             setCano({
@@ -143,9 +154,9 @@ function Home() {
                     <img className="caixaAgua" src={caixaAgua} alt=""/> 
                     <img className="tub2" src={tub2} alt="Tubo do balao 2"/>
                     <img className="tub3" src={tub3} alt="Tubo do balao 3"/>
-                    <img className="bacia1" src={bacia1Inicial} alt="bacia"/>
-                    <img className="bacia2" src={bacia2Inicial} alt="bacia2"/>
-                    <img className="tanqueReacao" src={tanqueReacaoInicial} alt="tanque de reação"/>
+                    <img className="bacia1" src={bacia1} alt="bacia"/>
+                    <img className="bacia2" src={bacia2} alt="bacia2"/>
+                    <img className="tanqueReacao" src={tanqueDeReacao} alt="tanque de reação"/>
                     <img className="cano1" src={canos.cano1} alt=""/>
                     <img className="cano2" src={canos.cano2} alt=""/>
                     <img className="cano3" src={canos.cano3} alt=""/>
