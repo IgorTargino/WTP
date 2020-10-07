@@ -1,8 +1,8 @@
 import React from 'react';
 
-import dadoInicial from '../../data/dados-iniciais.json'
+import dadoInicial from '../../data/dados-iniciais.json';
 
-import Pergunta from '../../components/pergunta'
+import Pergunta from '../../components/pergunta';
 
 import {
     bacia1Inicial,
@@ -14,35 +14,7 @@ import {
 import './etapa01.css';
 
 function Etapa01(response) {
-    function certo(etapa) {
-        const button = document.getElementsByClassName('myButton')
 
-        for (let i = 0; i < button.length; i++) {
-            (i === 3) ? button[i].classList.toggle('certa') : button[i].classList.toggle('errada')
-        }
-        if(etapa === 1){
-            dadoInicial.etapa02 = "1"
-        }else if(etapa === 2){
-            dadoInicial.etapa03 = "1"
-        }else if(etapa === 3){
-            dadoInicial.etapa04 = "1"
-        }else if(etapa === 4){
-            dadoInicial.etapa05 = "1"
-        }
-        //dadoInicial.etapa02 = "1"
-        localStorage.clear()
-    }
-
-    function errado() {
-        const button = document.getElementsByClassName('myButton')
-        //console.log("[Button]", button);
-
-        for (let i = 0; i < button.length; i++) {
-            (i === 3) ? button[i].classList.toggle('certa') : button[i].classList.toggle('errada')
-        }
-        alert("Errado!")
-    }
-    
     function perguntaCera(){
         const etapa = localStorage.getItem('etapa');
 
@@ -61,8 +33,6 @@ function Etapa01(response) {
                                 ter: "Al2(SO4)3",
                                 qua: "FeSO4" 
                             }}
-                    certo={certo}
-                    errado={errado}
                 />
             );
         }
@@ -80,7 +50,6 @@ function Etapa01(response) {
                                 ter: "Al2(SO4)3",
                                 qua: "FeSO4" 
                             }}
-                    certo={certo}
                 />
             );
         }
@@ -98,7 +67,6 @@ function Etapa01(response) {
                                 ter: "Al2(SO4)3",
                                 qua: "FeSO4" 
                             }}
-                    certo={certo}
                 />
             );
         }
@@ -116,7 +84,6 @@ function Etapa01(response) {
                                 ter: "Al2(SO4)3",
                                 qua: "FeSO4" 
                             }}
-                    certo={certo}
                 />
             );
         }
