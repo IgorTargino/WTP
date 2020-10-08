@@ -12,13 +12,13 @@ import './pergunta.css';
 function Pergunta({ id, etapa, item01, classItem01, item02, classItem02, titulo, pergunta, respostas, errado }) {
     const [resposta, setResposta] = useState(0);
     const [cont, setCont] = useState(0);
+
     function certo(etapa,id) {
         const idCerto = +id;
         const button = document.getElementsByClassName('myButton')
         for (let i = 0; i < button.length; i++) {
             (i === (idCerto-1)) ? button[i].classList.toggle('certa') : button[i].classList.toggle('errada')
         }
-
         if(etapa === 1){
             dadoInicial.etapa02 = "1"
         }else if(etapa === 2){
@@ -31,15 +31,6 @@ function Pergunta({ id, etapa, item01, classItem01, item02, classItem02, titulo,
             setResposta(1)
         }, 1500);
     }
-    
-    function errado(id) {
-        const idCerto = +id;
-        const button = document.getElementsByClassName('myButton')
-        for (let i = 0; i < button.length; i++) {
-            (i === (idCerto-1)) ? button[i].classList.toggle('certa') : button[i].classList.toggle('errada')
-        }
-        alert("Errado!")
-    }
 
     function fecharResposta() {
         setResposta(0);
@@ -49,15 +40,24 @@ function Pergunta({ id, etapa, item01, classItem01, item02, classItem02, titulo,
         if(res === id){
             certo(etapa,id)
         }else{
-            errado(id)
+            const idCerto = +id;
+            const button = document.getElementsByClassName('myButton')
+            for (let i = 0; i < button.length; i++) {
+                (i === (idCerto-1)) ? button[i].classList.toggle('certa') : button[i].classList.toggle('errada')
+            }
+            alert("Errado!");
         }
 
     }
 
     function ultimaPergunta(res) {
-        const sequenciaResposta = [2,3,1,4];
+        const sequenciaResposta = [1,2,4,3];
+        const pintar = document.getElementById(res)
+        const tirar = document.getElementsByClassName('myButton');
+        
+        console.log('[certo]', tirar);
         if(sequenciaResposta[cont] === +res ){
-            console.log('acertou');
+            pintar.classList.toggle('certa') 
             setCont(cont+1);
             if(cont === 3){
                 dadoInicial.etapa05 = "1"
@@ -65,6 +65,7 @@ function Pergunta({ id, etapa, item01, classItem01, item02, classItem02, titulo,
             }
         }else{
             alert('errou!!!!!!');
+            for (let i = 0; i < tirar.length; i++) {tirar[i].classList.remove('certa')}
             setCont(0);
         }
 

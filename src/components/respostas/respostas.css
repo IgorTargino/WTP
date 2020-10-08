@@ -124,7 +124,6 @@
         margin: 0;
     }
     .respostaMsg p{
-        background-color: pink;
         font-size: 15px;
         line-height: 28px;
         font-family: Old Standard TT;
@@ -156,7 +155,6 @@
         font-size: 20px;
     }
     .respostaMsg p{
-        background-color: blue;
         font-size: 15px;
         line-height: 18px;
         font-family: Old Standard TT;

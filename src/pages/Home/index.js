@@ -61,6 +61,7 @@ function Home() {
         }
     },[]);
 
+    /*Muda a imagem ou da o play na animação*/ 
     useEffect(() => {
         if (dadoInicial.etapa02 === "1") {
             setCano({
@@ -94,11 +95,11 @@ function Home() {
             setFiltro(filtroFinal);
             dadoInicial.comeca = "3"
         }
-        },[])
+    },[])
 
     function inicio() {
         if((dadoInicial.comeca === "1") && (dadoInicial.etapa02 === "0") ){
-            {dadoInicial.comeca= "0"}
+            dadoInicial.comeca= "0"
             return(
                 <Inicio
                     status="comeco"

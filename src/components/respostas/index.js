@@ -30,7 +30,7 @@ import './respostas.css';
             setimagemAtual(resposta04);
             setRespostaAtual('O filtro cumpriu sua função e reteu a  maior parte dos sólidos restantes e com a ajuda do carvão ativado houve uma adsorção de outras substâncias que promoviam gosto de odor.         Pronto,  após a passgem pelo filtro a água torno-se cristalina e perfeita para beber a olho nu do homem, mas para atender as normas de potabilidade da água deve-se ser adicionado uma quantiade de minima novamente de cloro livre na água, assim sevindo de blindagem para os futuros microorganimos que possam aparecer no caminho até dua casa.');
         }
-    },[])
+    },[etapa])
     
     return(
         <>
