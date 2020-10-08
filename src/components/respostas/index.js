@@ -11,10 +11,10 @@ import resposta04 from '../../assets/respostas/4-carvão 1.png';
 
 import './respostas.css';
 
-function Resposta({ fechar, etapa }) {
-    const [proximaTela, setProximaTela] = useState(1);
-    const [imagemAtual, setimagemAtual] = useState();
-    const [respostaAtual, setRespostaAtual] = useState();
+    function Resposta({ fechar, etapa }) {
+        const [proximaTela, setProximaTela] = useState(1);
+        const [imagemAtual, setimagemAtual] = useState();
+        const [respostaAtual, setRespostaAtual] = useState();
 
     useEffect(()=>{
         if(etapa === 1){
@@ -41,17 +41,23 @@ function Resposta({ fechar, etapa }) {
                     {
                         proximaTela ? 
                         <>
-                            <p>{respostaAtual}</p>
+                            <div className="respostaTexto">
+                                <p>{respostaAtual}</p>
+                            </div>
                             <div className="div-button">
                                 <button type="button" onClick={() => setProximaTela(0)} className="respostaButton"><span>Proximo</span></button>
                              </div>
                         </> : 
                         <>
-                            <img src={imagemAtual} alt=""/>
-                            {
-                                etapa === 2 ? <img src={resposta0202} alt=""/> : null
-                            }
-                            <Link to="/"><span>Home</span></Link>
+                            <div className="containerImagensResposta">
+                                <img src={imagemAtual} alt=""/>
+                                {
+                                    etapa === 2 ? <img src={resposta0202} alt=""/> : null
+                                }
+                                <div className="respostaButton">
+                                    <Link to="/"  className="respostaBtnHome">Home</Link>
+                                </div>
+                            </div>
                         </>
                     }
                     
