@@ -1,7 +1,5 @@
 import React from 'react';
 
-import dadoInicial from '../../data/dados-iniciais.json';
-
 import Pergunta from '../../components/pergunta';
 
 import {
@@ -13,7 +11,7 @@ import {
 
 import './etapa01.css';
 
-function Etapa01(response) {
+function Etapa01() {
 
     function perguntaCera(){
         const etapa = localStorage.getItem('etapa');
@@ -82,10 +80,10 @@ function Etapa01(response) {
                     pergunta={"Os coloides neutralizados formados ainda não possuem peso suficiente para sedimentarem, o que podemos adicionar para aumentar os flocos já formados? "}
                     item01={filtroInicial}
                     classItem01={"filtroEtapa"}
-                    respostas={{pri: "NaOCl",
-                                seg: "NaOH",
-                                ter: "Al2(SO4)3",
-                                qua: "FeSO4" 
+                    respostas={{pri: "Carvão ativo",
+                                seg: "Pedregulho",
+                                ter: "Areia grossa",
+                                qua: "Areia fina" 
                             }}
                     id="1"
                 />
