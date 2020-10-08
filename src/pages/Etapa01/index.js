@@ -33,6 +33,7 @@ function Etapa01(response) {
                                 ter: "Al2(SO4)3",
                                 qua: "FeSO4" 
                             }}
+                    id="1"
                 />
             );
         }
@@ -50,6 +51,7 @@ function Etapa01(response) {
                                 ter: "Al2(SO4)3",
                                 qua: "FeSO4" 
                             }}
+                    id="3"
                 />
             );
         }
@@ -65,8 +67,9 @@ function Etapa01(response) {
                     respostas={{pri: "NaOCl",
                                 seg: "NaOH",
                                 ter: "Al2(SO4)3",
-                                qua: "FeSO4" 
+                                qua: "Polímero aniônico" 
                             }}
+                    id="4"
                 />
             );
         }
@@ -84,6 +87,7 @@ function Etapa01(response) {
                                 ter: "Al2(SO4)3",
                                 qua: "FeSO4" 
                             }}
+                    id="1"
                 />
             );
         }

@@ -48,6 +48,7 @@ function Home() {
     const [bacia1, setBacia1] = useState(bacia1Inicial)
     const [bacia2, setBacia2] = useState(bacia2Inicial)
     const [tanqueDeReacao, setTanqueDeReacao] = useState(tanqueReacaoInicial)
+    const [filtro, setFiltro] = useState(filtroInicial)
 
     useEffect(() => {
         let ativo = document.querySelectorAll('.ativo');
@@ -78,7 +79,6 @@ function Home() {
                 cano3: cano3Final,
                 cano4: cano2Final,
             });
-            setBacia1(bacia1Final);
             setBacia2(bacia2Final);
             setTanqueDeReacao(tanqueReacaoFinal);
         }
@@ -91,6 +91,7 @@ function Home() {
                 cano4: cano2Final,
                 cano5: cano5Final
             });
+            setFiltro(filtroFinal);
             dadoInicial.comeca = "3"
         }
         },[])
@@ -145,7 +146,7 @@ function Home() {
                     <AcaoClick
                         dadoInicial={dadoInicial.etapa04}
                         className={"filtro"}
-                        src={filtroInicial}
+                        src={filtro}
                         etapa={"04"}
                     />
 

@@ -9,15 +9,17 @@ import dadoInicial from '../../data/dados-iniciais.json';
 
 import './pergunta.css';
 
-function Pergunta({ etapa, item01, classItem01, item02, classItem02, titulo, pergunta, respostas, errado }) {
+function Pergunta({ id, etapa, item01, classItem01, item02, classItem02, titulo, pergunta, respostas, errado }) {
     const [resposta, setResposta] = useState(0);
 
-    function certo(etapa) {
+    function certo(etapa,id) {
+        const idCerto = +id;
+        console.log("[ID]",idCerto);
         const button = document.getElementsByClassName('myButton')
-
         for (let i = 0; i < button.length; i++) {
-            (i === 3) ? button[i].classList.toggle('certa') : button[i].classList.toggle('errada')
+            (i === (idCerto-1)) ? button[i].classList.toggle('certa') : button[i].classList.toggle('errada')
         }
+
         if(etapa === 1){
             dadoInicial.etapa02 = "1"
         }else if(etapa === 2){
@@ -34,10 +36,12 @@ function Pergunta({ etapa, item01, classItem01, item02, classItem02, titulo, per
         }, 1500);
     }
     
-    function errado() {
+    function errado(id) {
+        const idCerto = +id;
+        console.log("[ID]",idCerto);
         const button = document.getElementsByClassName('myButton')
         for (let i = 0; i < button.length; i++) {
-            (i === 3) ? button[i].classList.toggle('certa') : button[i].classList.toggle('errada')
+            (i === (idCerto-1)) ? button[i].classList.toggle('certa') : button[i].classList.toggle('errada')
         }
         alert("Errado!")
     }
@@ -45,6 +49,16 @@ function Pergunta({ etapa, item01, classItem01, item02, classItem02, titulo, per
     function fecharResposta() {
         setResposta(0);
     }
+
+    function certoOuErrado(res) {
+        if(res === id){
+            certo(etapa,id)
+        }else{
+            errado(id)
+        }
+
+    }
+
     return(
         <>
             {
@@ -71,10 +85,10 @@ function Pergunta({ etapa, item01, classItem01, item02, classItem02, titulo, per
                     }                    
                     <div className="perguntas">
                         <div className="container-button grid">
-                            <p className="myButton" onClick={errado} >{respostas.pri}</p>
-                            <p className="myButton" onClick={errado} >{respostas.seg}</p>
-                            <p className="myButton" onClick={errado} >{respostas.ter}</p>
-                            <p className="myButton" onClick={() => certo(etapa)}  >{respostas.qua}</p>
+                            <p className="myButton" id="1" onClick={(res) => certoOuErrado(res.target.id)} >{respostas.pri}</p>
+                            <p className="myButton" id="2" onClick={(res) => certoOuErrado(res.target.id)} >{respostas.seg}</p>
+                            <p className="myButton" id="3" onClick={(res) => certoOuErrado(res.target.id)} >{respostas.ter}</p>
+                            <p className="myButton" id="4" onClick={(res) => certoOuErrado(res.target.id)} >{respostas.qua}</p>
                         </div>
                     </div>
                 </div>

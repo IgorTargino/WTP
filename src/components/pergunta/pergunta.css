@@ -86,10 +86,11 @@
     left: 0%;
     width: 40%;
 }
-.filtroEtapa{
+.filtroEtapa {
     position: absolute;
     top: 30%;
-    left: 5%; 
+    left: 21%;
+    width: 16%;
 }
 @media (max-width: 831px){
     .myButton {
