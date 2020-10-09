@@ -12,6 +12,20 @@
     
     color: #000000;
 }
+/*etapa 01*/
+.etapa1{display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: absolute;
+    top: 26%;
+    left: 53%;
+}
+.etapa0101{
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    height: 20px;
+    margin-left: 40px;
+}
 .home-back{
     position: absolute;
     top: 10px;
@@ -66,30 +80,14 @@
 .perguntas img{
     margin: 0 auto;
 }
-.perguntas{
-	display: grid;
-    grid-template-columns: 1fr 1fr;
-    position: absolute;
-    top: 26%;
-    left: 53%;
-}
-.grid {
-	display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 0 auto;
-    height: 20px;
-    margin-left: 40px;
-}
 .tanqueReacaoEtapa{
-    position: absolute;
-    top: 28%;
-    left: 0%;
+    margin: 20px 0;
     width: 40%;
+    max-width: 320px;
 }
 .filtroEtapa {
-    position: absolute;
-    top: 30%;
-    left: 21%;
+    margin: 20px 0;
+    max-width: 110px;
     width: 16%;
 }
 @media (max-width: 831px){

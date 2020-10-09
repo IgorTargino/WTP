@@ -77,7 +77,7 @@ function Etapa01() {
                 <Pergunta
                     etapa={4}
                     titulo={"Etapa 04"}
-                    pergunta={"Os coloides neutralizados formados ainda não possuem peso suficiente para sedimentarem, o que podemos adicionar para aumentar os flocos já formados? "}
+                    pergunta={"Muito bem, até o momento você já reduziu 95% de todas as partículas suspensas na água, mas para atender as normas do Ministério da Saúde de potabilidade da água necessitamos reduzir esse nível para 99% e retirar as substâncias que promovam a essa água gosto de odor. Temos como ferramenta o sistema de filtragem, selecione no sentido de cima para baixo a ordem das camadas do leito filtrante de um sistema convencional de filtragem lenta."}
                     item01={filtroInicial}
                     classItem01={"filtroEtapa"}
                     respostas={{pri: "Carvão ativo",

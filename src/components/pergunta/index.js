@@ -13,6 +13,7 @@ function Pergunta({ id, etapa, item01, classItem01, item02, classItem02, titulo,
     const [resposta, setResposta] = useState(0);
     const [cont, setCont] = useState(0);
 
+
     function certo(etapa,id) {
         const idCerto = +id;
         const button = document.getElementsByClassName('myButton')
@@ -90,13 +91,13 @@ function Pergunta({ id, etapa, item01, classItem01, item02, classItem02, titulo,
             </div>
             <div className="container">
                 <div className="game-container">
-                    <img className="lagoa" src={lagoa} alt="" />
+                    {etapa === 1 ? <img className="lagoa" src={lagoa} alt="" /> : null}
                     <img className={classItem01} src={item01} alt="" />
                     {item02 ? <img className={classItem02} src={item02} alt=""/> : 
                                 <></>
                     }                    
-                    <div className="perguntas">
-                        <div className="container-button grid">
+                    <div className={etapa === 1 ? "perguntas etapa1" : "perguntas"}>
+                        <div className={etapa === 1 ? "container-button etapa0101" : "container-button"}>
                             <p className="myButton" id="1" onClick={ (res) => etapa === 4 ? ultimaPergunta(res.target.id) : certoOuErrado(res.target.id) } >{respostas.pri}</p>
                             <p className="myButton" id="2" onClick={ (res) => etapa === 4 ? ultimaPergunta(res.target.id) : certoOuErrado(res.target.id) } >{respostas.seg}</p>
                             <p className="myButton" id="3" onClick={ (res) => etapa === 4 ? ultimaPergunta(res.target.id) : certoOuErrado(res.target.id) } >{respostas.ter}</p>
