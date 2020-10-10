@@ -17,10 +17,6 @@ import {
     bacia2Inicial,
     balao,
     caixaAgua,
-    cano1Inicial,
-    cano2Inicial,
-    cano3Inicial,
-    cano5Inicial,
     tub2,
     tub3,
     balao1,
@@ -32,10 +28,6 @@ import {
     tanqueReacaoFinal,
     bacia1Final,
     bacia2Final,
-    cano1Final,
-    cano2Final,
-    cano3Final,
-    cano5Final
 } from '../../import/imgFinal.js'
 
 import './home.css';
@@ -47,35 +39,30 @@ function Home() {
     const [tanqueDeReacao, setTanqueDeReacao] = useState(tanqueReacaoInicial)
     const [filtro, setFiltro] = useState(filtroInicial)
 
-    const [configAnim, setConfigAnim] = useState({
+    const configAnim = {
         loop: false,
         autoplay: false,
         rendererSettings: {
           preserveAspectRatio: 'xMidYMid slice'
         }
-    })
+    }
 
     const [cano1, setCano1] = useState({
         pause:false,
         stop:true
     })
-
     const [cano2, setCano2] = useState({
         pause:false,
         stop:true
     })
-
     const [cano3, setCano3] = useState({
         pause:false,
         stop:true
     })
-
     const [cano4, setCano4] = useState({
         pause:false,
         stop:true
     })
-
-
     const [cano5, setCano5] = useState({
         pause:false,
         stop:true
