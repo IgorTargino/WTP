@@ -1,3 +1,10 @@
+/* .bloqueiClick{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.692);
+    width: 100vw;
+    height: 100vh;
+} */
+
 /*CONTAINER*/
 .ceu {
     width: 100%;
@@ -79,6 +86,7 @@
     left: 6.1%;
     width: 16%;
     z-index: 0;
+    pointer-events: none;
 }
 .cano2{
     position: absolute;
@@ -86,6 +94,7 @@
     top: 36.2%;
     left: 38%;
     z-index: 0;
+    pointer-events: none;
 }
 .cano3{
     position: absolute;
@@ -93,6 +102,7 @@
     left: 6.1%;
     width: 78%;
     z-index: 0;
+    pointer-events: none;
 }
 .cano4{
     position: absolute;
@@ -100,6 +110,7 @@
     left: 40%;
     width: 21%;
     z-index: 0;
+    pointer-events: none;
 }
 .cano5{
     position: absolute;
@@ -107,6 +118,7 @@
     left: 6.1%;
     width: 87%;
     z-index: 0;
+    pointer-events: none;
 }
 /*BALOES*/
 .balao{    
