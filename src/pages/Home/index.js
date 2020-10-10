@@ -109,7 +109,6 @@ function Home() {
     },[])
 
     function inicio() {
-        console.log("[cano1]",cano1);
         if((dadoInicial.comeca === "1") && (dadoInicial.etapa02 === "0") ){
             dadoInicial.comeca= "0"
             return(
