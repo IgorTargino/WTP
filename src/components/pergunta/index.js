@@ -52,7 +52,7 @@ function Pergunta({ id, etapa, item01, classItem01, item02, classItem02, titulo,
     }
 
     function ultimaPergunta(res) {
-        const sequenciaResposta = [1,2,4,3];
+        const sequenciaResposta = [1,4,3,2];
         const pintar = document.getElementById(res)
         const tirar = document.getElementsByClassName('myButton');
         
@@ -100,7 +100,7 @@ function Pergunta({ id, etapa, item01, classItem01, item02, classItem02, titulo,
                         <div className={etapa === 1 ? "container-button etapa0101" : "container-button"}>
                             <p className="myButton" id="1" onClick={ (res) => etapa === 4 ? ultimaPergunta(res.target.id) : certoOuErrado(res.target.id) } >{respostas.pri}</p>
                             <p className="myButton" id="2" onClick={ (res) => etapa === 4 ? ultimaPergunta(res.target.id) : certoOuErrado(res.target.id) } >{respostas.seg}</p>
-                            <p className="myButton" id="3" onClick={ (res) => etapa === 4 ? ultimaPergunta(res.target.id) : certoOuErrado(res.target.id) } >{respostas.ter}</p>
+                <p className="myButton" id="3" onClick={ (res) => etapa === 4 ? ultimaPergunta(res.target.id) : certoOuErrado(res.target.id) } > {etapa === 4 ? respostas.ter : <span>Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub></span>}</p>
                             <p className="myButton" id="4" onClick={ (res) => etapa === 4 ? ultimaPergunta(res.target.id) : certoOuErrado(res.target.id) } >{respostas.qua}</p>
                         </div>
                     </div>

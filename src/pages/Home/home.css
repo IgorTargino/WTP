@@ -9,7 +9,7 @@
 .ceu {
     width: 100%;
     height: 20vh;
-    background: linear-gradient(180deg, #8AD5FF 0%, rgba(255, 255, 255, 0) 92.2%), #FFE86D;
+    background: linear-gradient(0deg, #C8CFE8 0%, #589CDE 100%);
 }
 .container{
     position: relative;
@@ -114,7 +114,7 @@
 }
 .cano5{
     position: absolute;
-    top: -24.4%;
+    top: -32.7%;
     left: 6.1%;
     width: 87%;
     z-index: 0;

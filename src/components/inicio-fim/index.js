@@ -15,10 +15,14 @@ function Inicio({ status }) {
                 liga ?
                     <div className="inicioFimContainer">
                         <div className="inicioFimMsg">
-                            <h1>S-eta</h1>
+                            <h1>S-ETA</h1>
                             {
                                 status === "comeco" ?
-                                <p>Olá, O sistema de tratamento de agua esta com problemas e precisamos da sua ajuda para levar agua limpa para os moradores do parque potira.</p>
+                                <>
+                                    <p>Olá, me chamo SETA,<br/><br/>
+                                    SETA significa Simulador de Estação de tratamento de Água.<br/><br/>
+                                    Estou passando por problemas e preciso de sua ajuda para podemos levar água potável até os moradores da cidade de Caucaia.</p>
+                                </>
                                 :
                                 <p>Obrigado, agora todos os moradores podem aproveitar de agua limpa. :)</p>
                             }

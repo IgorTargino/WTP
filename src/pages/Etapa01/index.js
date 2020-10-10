@@ -28,10 +28,11 @@ function Etapa01() {
                     classItem02={"cano1"}
                     respostas={{pri: "NaOCl",
                                 seg: "NaOH",
-                                ter: "Al2(SO4)3",
+                                ter: "",
                                 qua: "FeSO4" 
                             }}
                     id="1"
+                    // <span>Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub></span>
                 />
             );
         }
@@ -47,7 +48,7 @@ function Etapa01() {
                     respostas={{pri: "NaOCl",
                                 seg: "NaOH",
                                 ter: "Al2(SO4)3",
-                                qua: "FeSO4" 
+                                qua: "Polímero aniônico." 
                             }}
                     id="3"
                 />
@@ -77,7 +78,7 @@ function Etapa01() {
                 <Pergunta
                     etapa={4}
                     titulo={"Etapa 04"}
-                    pergunta={"Muito bem, até o momento você já reduziu 95% de todas as partículas suspensas na água, mas para atender as normas do Ministério da Saúde de potabilidade da água necessitamos reduzir esse nível para 99% e retirar as substâncias que promovam a essa água gosto de odor. Temos como ferramenta o sistema de filtragem, selecione no sentido de cima para baixo a ordem das camadas do leito filtrante de um sistema convencional de filtragem lenta."}
+                    pergunta={"O filtro cumpriu sua função e reteve a maior parte dos sólidos restantes, com a ajuda do carvão ativado houve uma adsorção de outras substâncias que promoviam gosto e odor. Pronto, após a passagem pelo filtro a água tornou-se cristalina e perfeita para beber a olho nu do homem, mas para atender as normas de potabilidade da água deve-se ser adicionado uma quantidade de mínima novamente de cloro livre na água, assim servindo de blindagem para os futuros microrganismos que possam aparecer no caminho até as  casa dos moradores."}
                     item01={filtroInicial}
                     classItem01={"filtroEtapa"}
                     respostas={{pri: "Carvão ativo",
