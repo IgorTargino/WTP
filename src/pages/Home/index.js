@@ -5,16 +5,10 @@ import dadoInicial from '../../data/dados-iniciais.json';
 import AcaoClick from '../../components/acaoclick';
 import Inicio from '../../components/inicio-fim';
 
-
 import Lottie from 'react-lottie';
-
 
 import {
     lagoa,
-    filtroInicial,
-    tanqueReacaoInicial,
-    bacia1Inicial,
-    bacia2Inicial,
     balao,
     caixaAgua,
     tub2,
@@ -23,21 +17,10 @@ import {
     balao2
 } from '../../import/imgInicial.js'
 
-import {
-    filtroFinal,
-    tanqueReacaoFinal,
-    bacia1Final,
-    bacia2Final,
-} from '../../import/imgFinal.js'
-
 import './home.css';
 
 
 function Home() {
-    const [bacia1, setBacia1] = useState(bacia1Inicial)
-    const [bacia2, setBacia2] = useState(bacia2Inicial)
-    const [tanqueDeReacao, setTanqueDeReacao] = useState(tanqueReacaoInicial)
-    const [filtro, setFiltro] = useState(filtroInicial)
 
     const configAnim = {
         loop: false,
@@ -46,6 +29,23 @@ function Home() {
           preserveAspectRatio: 'xMidYMid slice'
         }
     }
+
+    const [bacia1, setBacia1] = useState({
+        pause:false,
+        stop:true
+    })
+    const [bacia2, setBacia2] = useState({
+        pause:false,
+        stop:true
+    })
+    const [tanqueDeReacao, setTanqueDeReacao] = useState({
+        pause:false,
+        stop:true
+    })
+    const [filtro, setFiltro] = useState({
+        pause:false,
+        stop:true
+    })
 
     const [cano1, setCano1] = useState({
         pause:false,
@@ -84,26 +84,34 @@ function Home() {
         if (dadoInicial.etapa02 === "1") {
             setCano1({ stop:false })
             setInterval(() => {
-                setCano2({ stop: false })
+                setBacia1({ stop: false });
             }, 3000);
-            setBacia1(bacia1Final);
+            setInterval(() => {
+                setCano2({ stop: false });
+            }, 5000);
         
         }
         if (dadoInicial.etapa04 === "1") {
             setInterval(() => {
+                setTanqueDeReacao({ stop:false })
+            }, 6000);
+            setInterval(() => {
                 setCano3({ stop: false })
-            }, 4000);
+            }, 12000);
+            setInterval(() => {
+                setBacia2({ stop: false })
+            }, 17000);
             setInterval(() => {
                 setCano4({ stop: false })
-            }, 9000);
-            setBacia2(bacia2Final);
-            setTanqueDeReacao(tanqueReacaoFinal);
+            }, 19000);
         }
         if (dadoInicial.etapa05 === "1") {
             setInterval(() => {
+                setFiltro({ stop: false });
+            }, 20000);
+            setInterval(() => {
                 setCano5({ stop: false })
-            }, 11000);
-            setFiltro(filtroFinal);
+            }, 25000);
             dadoInicial.comeca = "3"
         }
     },[])
@@ -160,18 +168,55 @@ function Home() {
                         className={"filtro"}
                         src={filtro}
                         etapa={"04"}
+                        lottie={true}
+                        configAnim={configAnim}
+                        stop={filtro.stop}
+                        pause={filtro.pause}
                     />
-                    <div className="bloqueiClick"></div>
 
+                    <div className="bloqueiClick"></div>
                     <img className="balao" src={balao} alt="balao"/>
                     <img className="lagoa" src={lagoa} alt="lagoa"/>
                     <img className="caixaAgua" src={caixaAgua} alt=""/> 
                     <img className="tub2" src={tub2} alt="Tubo do balao 2"/>
                     <img className="tub3" src={tub3} alt="Tubo do balao 3"/>
-                    <img className="bacia1" src={bacia1} alt="bacia"/>
-                    <img className="bacia2" src={bacia2} alt="bacia2"/>
-                    <img className="tanqueReacao" src={tanqueDeReacao} alt="tanque de reação"/>
 
+                    <div className="bacia1">
+                        <Lottie 
+                            options={
+                                {
+                                ...configAnim,
+                                animationData:  require('../../assets/animação/bacia1.json')
+                                }
+                            }
+                            direction={1}
+                            isStopped={bacia1.stop}
+                            isPaused={bacia1.pause}/>
+                    </div>
+                    <div className="bacia2">
+                        <Lottie 
+                            options={
+                                {
+                                ...configAnim,
+                                animationData:  require('../../assets/animação/bacia2.json')
+                                }
+                            }
+                            direction={1}
+                            isStopped={bacia2.stop}
+                            isPaused={bacia2.pause}/>
+                    </div>
+                    <div className="tanqueReacao">
+                        <Lottie 
+                            options={
+                                {
+                                ...configAnim,
+                                animationData:  require('../../assets/animação/tanque-de-agitacao.json')
+                                }
+                            }
+                            direction={1}
+                            isStopped={tanqueDeReacao.stop}
+                            isPaused={tanqueDeReacao.pause}/>
+                    </div>
                     <div className="cano1">
                         <Lottie 
                             options={

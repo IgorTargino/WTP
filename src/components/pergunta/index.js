@@ -13,7 +13,6 @@ function Pergunta({ id, etapa, item01, classItem01, item02, classItem02, titulo,
     const [resposta, setResposta] = useState(0);
     const [cont, setCont] = useState(0);
 
-
     function certo(etapa,id) {
         const idCerto = +id;
         const button = document.getElementsByClassName('myButton')
@@ -38,8 +37,6 @@ function Pergunta({ id, etapa, item01, classItem01, item02, classItem02, titulo,
     }
 
     function certoOuErrado(res) {
-        console.log("[Id]",id);
-        console.log("[Res]",res);
         if(res === id){
             certo(etapa,id)
         }else{
@@ -83,7 +80,7 @@ function Pergunta({ id, etapa, item01, classItem01, item02, classItem02, titulo,
             }
             <div className="ceu">
                 <Link to="/"><img className="home-back" src={back} alt="" /></Link>
-                <div className="pergunta">
+                <div className={`pergunta etapaDetalhe${etapa}`}>
                     <p>{titulo} :<br /></p>
                     <p>
                         {pergunta}
