@@ -11,7 +11,7 @@ function Inicio({ status }) {
     
     return(
         <>
-            {   
+            {
                 liga ?
                     <div className="inicioFimContainer">
                         <div className="inicioFimMsg">

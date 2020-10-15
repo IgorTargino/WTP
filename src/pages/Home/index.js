@@ -1,4 +1,5 @@
 import React, { useState ,useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import dadoInicial from '../../data/dados-iniciais.json';
 
@@ -21,7 +22,6 @@ import './home.css';
 
 
 function Home() {
-
     const configAnim = {
         loop: false,
         autoplay: false,
@@ -31,6 +31,7 @@ function Home() {
     }
 
     const [bacia1, setBacia1] = useState({
+        anima: require('../../assets/animação/bacia1-suja.json'),
         pause:false,
         stop:true
     })
@@ -63,10 +64,47 @@ function Home() {
         pause:false,
         stop:true
     })
-    const [cano5, setCano5] = useState({
+    const [cano51, setCano51] = useState({
         pause:false,
         stop:true
     })
+    const [cano52, setCano52] = useState({
+        pause:false,
+        stop:true
+    })
+
+    const [comeca, setComeca] = useState(false) 
+    const [statusCano5, setStatusCano5] = useState({
+        b1: false,
+        b2: false,
+        b3: false,
+    })
+
+    function ultimaPergunta(res) {
+        if(res === '1'){
+            setStatusCano5({ ...statusCano5, b1:true })
+        }
+        else if(res === '2'){
+            setStatusCano5({ ...statusCano5, b2:true })
+
+        }else if(res === '3'){
+            setStatusCano5({ ...statusCano5, b3:true })
+            if(statusCano5.b1 && statusCano5.b2){
+                setCano52({ stop: false });
+                setComeca(true);
+            }
+        }
+    }
+/* clickEtapaFinal */
+    function liberarUltimaPergunta() {
+        let ativo = document.querySelectorAll('.clickEtapaFinal');
+        console.log(ativo);
+        let listaDeAtivo = Array.from(ativo);
+        for (let i = 0; i < listaDeAtivo.length; i++) {
+            listaDeAtivo[i].style.display = "block";      
+        }
+        
+    }
 
     useEffect(() => {
         let ativo = document.querySelectorAll('.ativo');
@@ -81,15 +119,20 @@ function Home() {
 
     /*Muda a imagem ou da o play na animação*/ 
     useEffect(() => {
+        console.log('[Affter]',dadoInicial.etapa06);
         if (dadoInicial.etapa02 === "1") {
             setCano1({ stop:false })
             setInterval(() => {
-                setBacia1({ stop: false });
+                setBacia1({...bacia1, stop: false, anima: require('../../assets/animação/bacia1.json')});
             }, 3000);
             setInterval(() => {
                 setCano2({ stop: false });
             }, 5000);
-        
+        }else{
+            setCano1({ stop:false })
+            setInterval(() => {
+                setBacia1({...bacia1, stop: false});
+            }, 3000);
         }
         if (dadoInicial.etapa04 === "1") {
             setInterval(() => {
@@ -110,21 +153,25 @@ function Home() {
                 setFiltro({ stop: false });
             }, 20000);
             setInterval(() => {
-                setCano5({ stop: false })
+                setCano51({ stop: false })
+                liberarUltimaPergunta()
             }, 25000);
-            dadoInicial.comeca = "3"
         }
-    },[])
+        if (dadoInicial.etapa06 === "1"){
+            setInterval(() => {
+                dadoInicial.comeca = "3";
+            }, 28000);
+        }
+    },[comeca])
 
     function inicio() {
         if((dadoInicial.comeca === "1") && (dadoInicial.etapa02 === "0") ){
-            dadoInicial.comeca= "0"
             return(
                 <Inicio
                     status="comeco"
                 /> 
             );
-        }else if(dadoInicial.comeca === "3" ){
+        }else if(dadoInicial.comeca === "3" || comeca ){
             return(
                 <Inicio
                     status="fim"
@@ -173,7 +220,11 @@ function Home() {
                         stop={filtro.stop}
                         pause={filtro.pause}
                     />
-
+                    
+                    <div id="1" className="ultimoBalao1 clickEtapaFinal" onClick={ (res) => ultimaPergunta(res.target.id) }>{ statusCano5.b1 ? <p>Um coisa</p> : ''}</div>
+                    <div id="2" className="ultimoBalao2 clickEtapaFinal" onClick={ (res) => ultimaPergunta(res.target.id) }>{ statusCano5.b2 ? <p>Um coisa</p> : ''}</div>
+                    <div id="3" className="ultimoBalao3 clickEtapaFinal" onClick={ (res) => ultimaPergunta(res.target.id) }>{ statusCano5.b3 ? <p>Um coisa</p> : ''}</div>
+                    
                     <div className="bloqueiClick"></div>
                     <img className="balao" src={balao} alt="balao"/>
                     <img className="lagoa" src={lagoa} alt="lagoa"/>
@@ -186,7 +237,7 @@ function Home() {
                             options={
                                 {
                                 ...configAnim,
-                                animationData:  require('../../assets/animação/bacia1.json')
+                                animationData:  bacia1.anima
                                 }
                             }
                             direction={1}
@@ -205,7 +256,7 @@ function Home() {
                             isStopped={bacia2.stop}
                             isPaused={bacia2.pause}/>
                     </div>
-                    <div className="tanqueReacao">
+                    <div className="tanqueReacao" >
                         <Lottie 
                             options={
                                 {
@@ -217,6 +268,7 @@ function Home() {
                             isStopped={tanqueDeReacao.stop}
                             isPaused={tanqueDeReacao.pause}/>
                     </div>
+
                     <div className="cano1">
                         <Lottie 
                             options={
@@ -270,12 +322,24 @@ function Home() {
                             options={
                                 {
                                 ...configAnim,
-                                animationData:  require('../../assets/animação/cano5.json')
+                                animationData:  require('../../assets/animação/cano5-p1.json')
                                 }
                             }
                             direction={1}
-                            isStopped={cano5.stop}
-                            isPaused={cano5.pause}/>
+                            isStopped={cano51.stop}
+                            isPaused={cano51.pause}/>
+                    </div>
+                    <div className="cano5">
+                        <Lottie 
+                            options={
+                                {
+                                ...configAnim,
+                                animationData:  require('../../assets/animação/cano5-p2.json')
+                                }
+                            }
+                            direction={1}
+                            isStopped={cano52.stop}
+                            isPaused={cano52.pause}/>
                     </div>
                 </div>
             </div>

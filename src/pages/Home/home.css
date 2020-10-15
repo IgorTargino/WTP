@@ -187,3 +187,54 @@
         transform: scale(1.0);
     }
 }
+
+
+/*Balao*/
+.ultimoBalao1, .ultimoBalao2, .ultimoBalao3{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.ultimoBalao1 p, .ultimoBalao2 p, .ultimoBalao3 p{
+    margin-top: 5px;
+}
+
+.ultimoBalao1{
+    position: absolute;
+
+    width: 110px;
+    height: 30px;
+    left: 14%;
+    top: 84%;
+    width: 8%;
+    height: 8%;
+    z-index: 10;
+}
+
+.ultimoBalao2{
+    position: absolute;
+    width: 110px;
+    height: 30px;
+    left: 28%;
+    top: 84%;
+    width: 8%;
+    height: 8%;
+    z-index: 10;
+
+}
+
+.ultimoBalao3{
+    position: absolute;
+
+    width: 110px;
+    height: 30px;
+    left: 42%;
+    top: 84%;
+    width: 8%;
+    height: 8%;
+    z-index: 10;
+}
+
+.clickEtapaFinal{
+    display: none;
+}
