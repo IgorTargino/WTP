@@ -1,5 +1,4 @@
 import React, { useState ,useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
 
 import dadoInicial from '../../data/dados-iniciais.json';
 
@@ -221,9 +220,9 @@ function Home() {
                         pause={filtro.pause}
                     />
                     
-                    <div id="1" className="ultimoBalao1 clickEtapaFinal" onClick={ (res) => ultimaPergunta(res.target.id) }>{ statusCano5.b1 ? <p>Um coisa</p> : ''}</div>
-                    <div id="2" className="ultimoBalao2 clickEtapaFinal" onClick={ (res) => ultimaPergunta(res.target.id) }>{ statusCano5.b2 ? <p>Um coisa</p> : ''}</div>
-                    <div id="3" className="ultimoBalao3 clickEtapaFinal" onClick={ (res) => ultimaPergunta(res.target.id) }>{ statusCano5.b3 ? <p>Um coisa</p> : ''}</div>
+                    <div id="1" className="ultimoBalao1 clickEtapaFinal" onClick={ (res) => ultimaPergunta(res.target.id) }>{ statusCano5.b1 ? <p>NaOCl</p> : ''}</div>
+                    <div id="2" className="ultimoBalao2 clickEtapaFinal" onClick={ (res) => ultimaPergunta(res.target.id) }>{ statusCano5.b2 ? <p>NaF</p> : ''}</div>
+                    <div id="3" className="ultimoBalao3 clickEtapaFinal" onClick={ (res) => ultimaPergunta(res.target.id) }>{ statusCano5.b3 ? <p>NaOH</p> : ''}</div>
                     
                     <div className="bloqueiClick"></div>
                     <img className="balao" src={balao} alt="balao"/>

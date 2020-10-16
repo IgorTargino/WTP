@@ -196,6 +196,7 @@
     justify-content: center;
 }
 .ultimoBalao1 p, .ultimoBalao2 p, .ultimoBalao3 p{
+    z-index: 1;
     margin-top: 5px;
 }
 
