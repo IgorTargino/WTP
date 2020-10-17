@@ -21,3 +21,4 @@
 
 - [ReactJS](https://reactjs.org/)
 - [react-router-dom](https://github.com/ReactTraining/react-router)
+- [lottie-web](https://github.com/airbnb/lottie-web)
